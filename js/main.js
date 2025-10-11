@@ -25,6 +25,31 @@ for (const [id, file] of Object.entries(sectionsToLoad)) {
 function initSiteFeatures() {
   setupMobileMenu();
   setupTypewriterEffect();
+  setupPageTransitions();
+}
+
+// Add smooth page transitions
+function setupPageTransitions() {
+  document.body.addEventListener('click', function (e) {
+    const link = e.target.closest('a');
+
+    if (!link) return;
+
+    const href = link.getAttribute('href');
+    const isExternal = link.getAttribute('target') === '_blank' || (href && (href.startsWith('http') || href.startsWith('mailto:')));
+    const isAnchor = href && href.startsWith('#');
+
+    // Only apply to internal, non-anchor links
+    if (href && !isExternal && !isAnchor) {
+      e.preventDefault();
+      
+      document.body.classList.add('fade-out');
+
+      setTimeout(() => {
+        window.location.href = href;
+      }, 200); // Match CSS transition duration
+    }
+  });
 }
 
 // Toggle mobile hamburger menu
