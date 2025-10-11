@@ -24,7 +24,7 @@ for (const [id, file] of Object.entries(sectionsToLoad)) {
 // Initialize features after nav & footer are injected
 function initSiteFeatures() {
   setupMobileMenu();
-  setupTypewriterBlink();
+  setupTypewriterEffect();
 }
 
 // Toggle mobile hamburger menu
@@ -48,12 +48,43 @@ function setupMobileMenu() {
 }
 
 // Blinking cursor effect
-function setupTypewriterBlink() {
-  const typewriter = document.querySelector('.typewriter');
-  if (typewriter) {
-    setInterval(() => {
-      typewriter.style.borderRightColor =
-        typewriter.style.borderRightColor === 'transparent' ? '#000' : 'transparent';
-    }, 750);
+async function setupTypewriterEffect() {
+  const typewriterElement = document.querySelector('.typewriter');
+  if (!typewriterElement) return;
+
+  const roles = ["Molecular Oncology", "Cancer Genomics", "Bioinformatics"];
+  let roleIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  const typeSpeed = 150;
+  const deleteSpeed = 100;
+  const delayBetweenRoles = 1500;
+
+  function type() {
+    const currentRole = roles[roleIndex];
+    let displayText = '';
+
+    if (isDeleting) {
+      displayText = currentRole.substring(0, charIndex - 1);
+      charIndex--;
+    } else {
+      displayText = currentRole.substring(0, charIndex + 1);
+      charIndex++;
+    }
+
+    typewriterElement.textContent = displayText;
+
+    if (!isDeleting && charIndex === currentRole.length) {
+      isDeleting = true;
+      setTimeout(type, delayBetweenRoles);
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+      setTimeout(type, typeSpeed);
+    } else {
+      setTimeout(type, isDeleting ? deleteSpeed : typeSpeed);
+    }
   }
+  type();
 }
