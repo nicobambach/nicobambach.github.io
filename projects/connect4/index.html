@@ -1,27 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Connect 4 | Nicholas E. Bambach</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="../../css/styles.css" />
-  <link rel="stylesheet" href="connect4.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <title>Nicholas E. Bambach | CV</title>
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body class="min-h-screen bg-gray-50">
-  <div id="nav-container"></div>
 
-  <main class="pt-24 pb-12 container mx-auto px-6 text-center">
-    <h1 class="text-4xl font-bold mb-4">Connect 4</h1>
-    <h2 id="winner" class="text-2xl font-semibold text-red-600 mb-4"></h2>
-    <button id="playAgain" class="play-again-btn" style="display: none;" onclick="resetGame()">🔄 Play Again</button>
-    <div id="board" class="mt-6"></div>
+<body class="min-h-screen bg-gray-50">
+  <header class="bg-white shadow-sm py-4">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Nicholas E. Bambach</h1>
+      <nav class="flex gap-6">
+        <a href="about.html" class="text-gray-700 hover:text-black">About</a>
+        <a href="publications.html" class="text-gray-700 hover:text-black">Publications</a>
+        <a href="tutorials.html" class="text-gray-700 hover:text-black">Tutorials</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-6 py-12 text-center">
+    <h1 class="text-4xl font-bold mb-4">Welcome to My CV</h1>
+    <p class="text-lg text-gray-600 mb-8">
+      I am a researcher specializing in molecular oncology and cancer genomics. Explore my work, publications, and
+      tutorials.
+    </p>
+    <div class="flex justify-center gap-4">
+      <a href="about.html" class="px-6 py-3 bg-black text-white rounded hover:bg-gray-800 transition">About Me</a>
+      <a href="publications.html" class="px-6 py-3 border border-black rounded hover:bg-gray-100 transition">View
+        Publications</a>
+    </div>
   </main>
 
-  <div id="footer-container"></div>
-
-  <script src="connect4.js" defer></script>
-  <script src="../../js/main.js" defer></script>
+  <footer class="bg-gray-100 py-4 text-center">
+    <p class="text-gray-600">© 2026 Nicholas E. Bambach</p>
+  </footer>
 </body>
+
 </html>

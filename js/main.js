@@ -42,7 +42,7 @@ function setupPageTransitions() {
     // Only apply to internal, non-anchor links
     if (href && !isExternal && !isAnchor) {
       e.preventDefault();
-      
+
       document.body.classList.add('fade-out');
 
       setTimeout(() => {
@@ -77,7 +77,7 @@ async function setupTypewriterEffect() {
   const typewriterElement = document.querySelector('.typewriter');
   if (!typewriterElement) return;
 
-  const roles = ["Molecular Oncology", "Cancer Genomics", "Bioinformatics"];
+  const roles = ["Precision Oncology", "Cancer Genomics", "Bioinformatics"];
   let roleIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
