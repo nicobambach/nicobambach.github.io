@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resources | Nicholas E. Bambach</title>
+    <meta name="description" content="Explore computational biology resources by Nicholas E. Bambach.">
+    <meta name="keywords" content="computational biology, RNA-seq, bioinformatics, WES, copy-number, FACETS">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="min-h-screen bg-gray-50">
+    <div id="nav-container"></div>
+
+    <main class="pt-24 pb-12 container mx-auto px-6">
+        <h1 class="text-4xl font-bold mb-8">Resources</h1>
+        <p class="text-xl text-gray-600 mb-12">
+            Explore bioinformatic tools and step-by-step tutorials.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+
+            <!-- auto-facets Tutorial Card -->
+            <a href="https://github.com/nicobambach/auto-facets"
+                class="project-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
+                <div class="h-48 relative overflow-hidden">
+                    <img src="images/auto-facets-output.png" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gray-900/20"></div>
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <h3 class="text-xl font-semibold mb-2">auto-facets</h3>
+                    <p class="text-gray-600 mb-4 flex-grow">
+                        auto-facets automates allele-specific copy-number variation (CNV) analysis using the FACETS
+                        algorithim. It calculates tumor purity, ploidy, and CNVs,
+                        and automatically generates output plots, tables, and .seg files for further analysis.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Tool</span>
+                        <span class="text-blue-600 hover:underline">Learn More →</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- GATES Tutorial Card -->
+            <a href="https://github.com/nicobambach/GATES"
+                class="project-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
+                <div class="h-48 relative overflow-hidden">
+                    <img src="images/gates_logo_light.png" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gray-900/20"></div>
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <h3 class="text-xl font-semibold mb-2">GATES</h3>
+                    <p class="text-gray-600 mb-4 flex-grow">
+                        GATES automates WES analysis in a few commands. From raw FASTQ files,
+                        it detects somatic and germline variants and outputs potential pathogenic mutations
+                        in a Excel file. Through its simplified interface and ability to run on a laptop, GATES makes
+                        WES analysis accessible to non-computational researchers.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Tool</span>
+                        <span class="text-blue-600 hover:underline">Learn More →</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="js/main.js" defer></script>
+</body>
+
+</html>
